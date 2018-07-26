@@ -46,10 +46,10 @@ public class InvoiceService {
 			}
 		} catch (ValidationException e) {
 			allInvoices.add(new InvoiceResponse(BAD_REQUEST.toString(), BAD_REQUEST.getReasonPhrase(), e.getMessage()));
-			invoiceResponses.setInvoices(allInvoices);
+			invoiceResponses.setInvoice(allInvoices);
 			return invoiceResponses;
 		}
-		invoiceResponses.setInvoices(allInvoices);
+		invoiceResponses.setInvoice(allInvoices);
 		return invoiceResponses;
 	}
 

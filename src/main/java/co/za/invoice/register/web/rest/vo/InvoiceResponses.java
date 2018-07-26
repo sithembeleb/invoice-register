@@ -11,7 +11,7 @@ import java.util.List;
 @XmlRootElement(name = "invoices")
 public class InvoiceResponses {
 
-	@XmlElement(name = "invoices")
-	@JsonProperty(value = "invoices")
-	private List<InvoiceResponse> invoices;
+	@XmlElement(name = "invoice")
+	@JsonProperty(value = "invoice")
+	private List<InvoiceResponse> invoice;
 }

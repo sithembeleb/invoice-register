@@ -24,23 +24,18 @@ public class InvoiceRestController {
 		this.invoiceService = invoiceService;
 	}
 
-	@RequestMapping(method = GET, produces = {APPLICATION_XML_VALUE,
-			APPLICATION_JSON_VALUE}, consumes = {APPLICATION_XML_VALUE,
-			APPLICATION_JSON_VALUE})
+	@RequestMapping(method = GET, produces = {APPLICATION_XML_VALUE, APPLICATION_JSON_VALUE})
 	public InvoiceResponses viewAllInvoices() {
 		return invoiceService.getAllInvoices();
 	}
 
-	@RequestMapping(value = "/{invoiceId}", method = GET, produces = {
-			APPLICATION_XML_VALUE, APPLICATION_JSON_VALUE}, consumes = {
-			APPLICATION_XML_VALUE, APPLICATION_JSON_VALUE})
+	@RequestMapping(value = "/{invoiceId}", method = GET, produces = {APPLICATION_XML_VALUE, APPLICATION_JSON_VALUE})
 	public InvoiceResponse viewInvoice(@PathVariable final String invoiceId) {
 		return invoiceService.getInvoice(new Long(invoiceId));
 	}
 
-	@RequestMapping(method = POST, produces = {APPLICATION_XML_VALUE,
-			APPLICATION_JSON_VALUE}, consumes = {APPLICATION_XML_VALUE,
-			APPLICATION_JSON_VALUE})
+	@RequestMapping(method = POST, produces = {APPLICATION_XML_VALUE, APPLICATION_JSON_VALUE},
+			consumes = {APPLICATION_XML_VALUE, APPLICATION_JSON_VALUE})
 	public InvoiceResponse addInvoice(@RequestBody final InvoiceRequest invoiceRequest) {
 		return invoiceService.addInvoice(invoiceRequest);
 	}
